@@ -1,0 +1,32 @@
+[
+  {
+    "name": "",
+    "path": "",
+    "component": "/Users/vijayanandan/projects/online-retail-shopping/node_modules/@nuxt/vue-app/template/pages/index.vue"
+  },
+  {
+    "path": "/",
+    "component": "/Users/vijayanandan/projects/online-retail-shopping/project/index.vue",
+    "chunkName": "project/index.vue"
+  },
+  {
+    "path": "/",
+    "component": "/Users/vijayanandan/projects/online-retail-shopping/project/index.vue",
+    "chunkName": "project/index.vue"
+  },
+  {
+    "path": "/dashboard",
+    "component": "/Users/vijayanandan/projects/online-retail-shopping/project/homePage.vue",
+    "chunkName": "project/homePage.vue"
+  },
+  {
+    "path": "/productShopping",
+    "component": "/Users/vijayanandan/projects/online-retail-shopping/project/productShopping/list.vue",
+    "chunkName": "project/productShopping/list.vue"
+  },
+  {
+    "path": "/addProduct",
+    "component": "/Users/vijayanandan/projects/online-retail-shopping/project/addProduct/productCart.vue",
+    "chunkName": "project/addProduct/productCart.vue"
+  }
+]
