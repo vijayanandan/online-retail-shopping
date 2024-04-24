@@ -1,9 +1,11 @@
 .home_page_banner{
     background-image: url("~static/img/back.jpg");
+    background-size: cover;
     width: 100%;
     height: 500px;
     background-position: right;
     background-repeat: no-repeat;
+    padding-top: 10%;
 }
 .main_content_warp{
     margin:0px 15px 15px 170px;

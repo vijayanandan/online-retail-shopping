@@ -16,12 +16,6 @@
                                     item }}</option>
                                 </select>
                             </div>
-                            <div v-else>
-                                <input type="number" v-model="selectedQuantity" id="quantity" name="quantity" min="1">
-                                <span v-if="$v.selectedQuantity.$error && !$v.selectedQuantity.required"> {{ this.$t('errors').this_field_required }}</span>
-                                <span
-                                v-if="$v.selectedQuantity.$error && $v.selectedQuantity.required && !$v.selectedQuantity.numeric">{{ this.$t('errors').enter_valid_value }}</span>
-                            </div>
                         </div>
                         <div class="text-right">
                             <p class="mb-0">{{ this.$t('common').in_stock }} </p>
@@ -30,8 +24,7 @@
                     </div>
                 </b-card-text>
                 <div>
-                    <b-button class="col-md-12 buy-button-color" v-if="productDetails.Quantity > 0" @click="onSubmit('buy')">{{ this.$t('common').buy }}</b-button>
-                    <b-button class="col-md-12 buy-button-color" v-if="productDetails.Quantity == 0" @click="onSubmit('restock')">{{ this.$t('common').order }}</b-button>
+                    <b-button class="col-md-12 buy-button-color" v-if="productDetails.Quantity > 0" @click="onSubmit()">{{ this.$t('common').buy }}</b-button>
                 </div>
             </b-card-body>
         </div>
@@ -40,11 +33,8 @@
 </template>
 
 <script>
-const { required ,numeric} = require('vuelidate/lib/validators');
 import Vue from "vue";
 import BootstrapVue from "bootstrap-vue";
-import Vuelidate from 'vuelidate';
-Vue.use(Vuelidate);
 Vue.use(BootstrapVue);
 
 
@@ -66,12 +56,6 @@ export default {
             selectedQuantity: 1
         }
     },
-    validations: {
-        selectedQuantity: {
-            required,
-            numeric
-        }
-    },
     methods: {
         limitQuantity(quantity) {
             let tempQuantity = quantity
@@ -80,23 +64,12 @@ export default {
             }
             return tempQuantity;
         },
-        doValidate() {
-            let isErrorData = true;
-            this.$v.selectedQuantity.$touch()
-            if (this.$v.selectedQuantity.$invalid) {
-                isErrorData =  false
-            }
-            return isErrorData
-        },
-        onSubmit(givenType) {
-            if(!this.doValidate && givenType == 'restock') {
-                return false
-            }
-            let tmpProd = {
+        onSubmit() {
+            let givenVal = {
                 selectedQuantity: this.selectedQuantity,
                 ...this.productDetails
             }
-            this.$emit('onPurchaseOrder', tmpProd)
+            this.$emit('onPurchaseOrder', givenVal)
         }
     }
 }

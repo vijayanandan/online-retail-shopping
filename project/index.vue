@@ -1,5 +1,5 @@
 <template>
-    <div class="d-flex justify-content-center align-items-center vh-100 home_page_banner">
+    <div class="d-flex justify-content-center vh-100 home_page_banner">
         <b-card-group deck>
             <nuxt-link class="mr-2 action-icon-btn" to="productShopping"
                 v-b-tooltip.hover="{ customClass: 'custom-tooltip' }" title="Product List">
