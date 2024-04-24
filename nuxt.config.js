@@ -1,51 +1,57 @@
-
-const routes = require('./routes/index.js');
+const routes = require("./routes/index.js");
 export default {
   ssr: false,
-  target: 'static',
-  mode: 'spa',
-  base: '/',
+  target: "static",
+  mode: "spa",
   server: {
-    port: 3000,
-    host: '0.0.0.0',
-},
+    port: 8080,
+    host: "0.0.0.0",
+  },
+  env: {
+    app_env: "Dev",
+    apiBase: "https://uiexercise.theproindia.com/api"
+  },
   head: {
-    title: 'online-retail-shopping',
+    title: "online-retail-shopping",
     htmlAttrs: {
-      lang: 'en'
+      lang: "en",
     },
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { hid: "description", name: "description", content: "" }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    script:[]
   },
-  css: [
-  ],
+  css: ['~/assets/css/styles.css'],
   plugins: [
-    { src: '~/plugins/axios.js' },
-  ],
-  components: true,
-  buildModules: [
-  ],
-  modules: [
-    'bootstrap-vue/nuxt',
-  ],
+{ src: "~/plugins/axios.js" },
+  { src: '~/plugins/i18n.js' }
+],
+  buildModules: [],
+  modules: ["bootstrap-vue/nuxt"],
+  terser: {
+    terserOptions: {
+      compress: {
+        drop_console: true,
+      },
+    },
+  },
   router: {
-    base: '/',
+    base: "/",
     extendRoutes(nuxtRoutes, resolve) {
         routes.forEach((route) => {
             nuxtRoutes.push({
                 path: route.path,
                 component: resolve(__dirname, route.component),
+                meta: route.meta,
                 chunkName : route.component
             });
         });
-        
     }
-},
-}
+  },
+  watchOptions: {
+    ignored: /node_modules/
+  },
+};

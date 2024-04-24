@@ -195,11 +195,11 @@ export async function setContext (app, context) {
       isDev: true,
       isHMR: false,
       app,
-
+      store: app.store,
       payload: context.payload,
       error: context.error,
       base: app.router.options.base,
-      env: {}
+      env: {"app_env":"Dev","apiBase":"https://uiexercise.theproindia.com/api"}
     }
     // Only set once
 

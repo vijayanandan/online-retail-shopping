@@ -1,32 +1,20 @@
 [
   {
-    "name": "",
-    "path": "",
-    "component": "/Users/vijayanandan/projects/online-retail-shopping/node_modules/@nuxt/vue-app/template/pages/index.vue"
-  },
-  {
     "path": "/",
     "component": "/Users/vijayanandan/projects/online-retail-shopping/project/index.vue",
-    "chunkName": "project/index.vue"
-  },
-  {
-    "path": "/",
-    "component": "/Users/vijayanandan/projects/online-retail-shopping/project/index.vue",
-    "chunkName": "project/index.vue"
-  },
-  {
-    "path": "/dashboard",
-    "component": "/Users/vijayanandan/projects/online-retail-shopping/project/homePage.vue",
-    "chunkName": "project/homePage.vue"
+    "chunkName": "project/index.vue",
+    "_name": "_73522e0b"
   },
   {
     "path": "/productShopping",
     "component": "/Users/vijayanandan/projects/online-retail-shopping/project/productShopping/list.vue",
-    "chunkName": "project/productShopping/list.vue"
+    "chunkName": "project/productShopping/list.vue",
+    "_name": "_44cb960d"
   },
   {
-    "path": "/addProduct",
-    "component": "/Users/vijayanandan/projects/online-retail-shopping/project/addProduct/productCart.vue",
-    "chunkName": "project/addProduct/productCart.vue"
+    "path": "/ProductSeller",
+    "component": "/Users/vijayanandan/projects/online-retail-shopping/project/productSeller/form.vue",
+    "chunkName": "project/productSeller/form.vue",
+    "_name": "_0415fefc"
   }
 ]

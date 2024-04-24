@@ -10,9 +10,12 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css'
 
 import '../node_modules/bootstrap-vue/dist/bootstrap-vue.css'
 
-import _6f6c098b from '../layouts/default.vue'
+import '../assets/css/styles.css'
 
-const layouts = { "_default": sanitizeComponent(_6f6c098b) }
+import _6f6c098b from '../layouts/default.vue'
+import _5512dfb0 from '../layouts/shoppingLayout.vue'
+
+const layouts = { "_default": sanitizeComponent(_6f6c098b),"_shoppingLayout": sanitizeComponent(_5512dfb0) }
 
 export default {
   render (h, props) {

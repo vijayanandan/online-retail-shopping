@@ -1,0 +1,18 @@
+{
+    "common": {
+        "quantity":"Quantity",
+        "buy":"Buy",
+        "order":"Order",
+        "in_stock":"In Stock",
+        "product_order":"Product Order",
+        "submit":"Submit",
+        "clear":"Clear"
+    },
+    "errors": {
+        "this_field_required":"This field required",
+        "enter_valid_value":"Enter valid value",
+        "enter_product_name":"Please enter product name",
+        "select_quantity":"Please enter Quantity",
+        "number_allowed":"Only numbers are permitted."
+    }
+}
