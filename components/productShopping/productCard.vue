@@ -40,12 +40,13 @@
 </template>
 
 <script>
+const { required ,numeric} = require('vuelidate/lib/validators');
 import Vue from "vue";
 import BootstrapVue from "bootstrap-vue";
-Vue.use(BootstrapVue);
-import Vuelidate from 'vuelidate'
-const { required ,numeric} = require('vuelidate/lib/validators')
+import Vuelidate from 'vuelidate';
 Vue.use(Vuelidate);
+Vue.use(BootstrapVue);
+
 
 export default {
     props: {

@@ -10,8 +10,8 @@ module.exports = {
     'json'
   ],
   transform: {
-    '^.+\\.js$': 'babel-jest',
-    '.*\\.(vue)$': 'vue-jest'
+    '^.+\\.vue$': 'vue-jest',
+    '^.+\\.js$': 'babel-jest', // Add this line if you're using Babel for JS files
   },
   collectCoverage: true,
   collectCoverageFrom: [

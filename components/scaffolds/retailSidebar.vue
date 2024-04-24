@@ -30,9 +30,6 @@
 
 <script>
 export default {
-    methods: {
-
-    },
     computed: {
         menuList: function () {
             return this.$store.getters.getMenuData;
