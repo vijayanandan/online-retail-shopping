@@ -7,7 +7,10 @@ export const state = () => ({
   paginationConfig: {
     pageSize: 12,
     pageNumber: 1,
-    totalCount:1
+    totalCount:1,
+    min: 1,
+    max: 8,
+    imgOrder: 12
   }
 });
 export const mutations = {
@@ -56,7 +59,7 @@ export const actions = {
       })
       .catch((error) => {});
   },
-  initializeOrderProduct({ commit, dispatch }, payload) {
+  initializeOrderProduct({ commit,state, dispatch }, payload) {
     let serverUrl = "/Order/AddOrder";
     let configData = {
       productId: payload.ProductId,
@@ -67,6 +70,9 @@ export const actions = {
       .post(serverUrl, configData)
       .then((response) => {
         if (response.status == 200) {
+            if (payload.selectedQuantity == payload.Quantity) {
+                state.productConfig.imgOrder = Math.floor(Math.random() * (state.productConfig.max - state.productConfig.min + 1)) + state.productConfig.min;
+            }
           dispatch("initializeProductList");
         }
       })

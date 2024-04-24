@@ -6,7 +6,7 @@
         <div v-if="!isLoading">
             <div class="d-flex flex-wrap justify-content-between product-wrapper row">
                 <div v-for="(pData, Pinx) in productList" :key=Pinx class="col-6">
-                    <product-card class="" :productDetails="pData" :number="Pinx"
+                    <product-card class="" :productDetails="pData" :number="paginationConfig.imgOrder + Pinx + pageNumber"
                         @onPurchaseOrder="orderProduct"></product-card>
                 </div>
             </div>
@@ -61,6 +61,7 @@ export default {
             this.$store.dispatch('shopping/initializeOrderProduct', product)
         },
         linkGen(pageNum) {
+            this.pageNumber = pageNum
             this.$store.dispatch('shopping/setPagination', pageNum)
         },
     }
