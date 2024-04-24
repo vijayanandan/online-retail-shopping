@@ -2,19 +2,16 @@
   {
     "path": "/",
     "component": "/Users/vijayanandan/projects/online-retail-shopping/project/index.vue",
-    "chunkName": "project/index.vue",
-    "_name": "_73522e0b"
+    "chunkName": "project/index.vue"
   },
   {
     "path": "/productShopping",
     "component": "/Users/vijayanandan/projects/online-retail-shopping/project/productShopping/list.vue",
-    "chunkName": "project/productShopping/list.vue",
-    "_name": "_44cb960d"
+    "chunkName": "project/productShopping/list.vue"
   },
   {
     "path": "/ProductSeller",
     "component": "/Users/vijayanandan/projects/online-retail-shopping/project/productSeller/form.vue",
-    "chunkName": "project/productSeller/form.vue",
-    "_name": "_0415fefc"
+    "chunkName": "project/productSeller/form.vue"
   }
 ]

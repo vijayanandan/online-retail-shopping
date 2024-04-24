@@ -9,7 +9,7 @@ export default {
   },
   env: {
     app_env: "Dev",
-    apiBase: "https://uiexercise.theproindia.com/api"
+    apiBase: "https://uiexercise.theproindia.com/api",
   },
   head: {
     title: "online-retail-shopping",
@@ -19,16 +19,13 @@ export default {
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "" }
+      { hid: "description", name: "description", content: "" },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
-    script:[]
+    script: [],
   },
-  css: ['~/assets/css/styles.css'],
-  plugins: [
-{ src: "~/plugins/axios.js" },
-  { src: '~/plugins/i18n.js' }
-],
+  css: ["~/assets/css/styles.css"],
+  plugins: [{ src: "~/plugins/axios.js" }, { src: "~/plugins/i18n.js" }],
   buildModules: [],
   modules: ["bootstrap-vue/nuxt"],
   terser: {
@@ -41,17 +38,17 @@ export default {
   router: {
     base: "/",
     extendRoutes(nuxtRoutes, resolve) {
-        routes.forEach((route) => {
-            nuxtRoutes.push({
-                path: route.path,
-                component: resolve(__dirname, route.component),
-                meta: route.meta,
-                chunkName : route.component
-            });
+      routes.forEach((route) => {
+        nuxtRoutes.push({
+          path: route.path,
+          component: resolve(__dirname, route.component),
+          meta: route.meta,
+          chunkName: route.component,
         });
-    }
+      });
+    },
   },
   watchOptions: {
-    ignored: /node_modules/
+    ignored: /node_modules/,
   },
 };
