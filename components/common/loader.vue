@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="position-relative dataTable-wrapper">
+        <div class="position-relative dataTable-wrapper isLoading">
             <div v-if="isLoading">
                 <div class="overlay-loader"></div>
                 <b-spinner size="50px" class="dataTable-loader m-auto"></b-spinner>

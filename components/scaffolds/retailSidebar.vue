@@ -1,9 +1,9 @@
 <template>
 <div class="sidebar-menu navbar-menu">
-    <div class="navbar-brand-box">
+    <div class="navbar-brand-box my-2">
         <a href="#" class="logo">
-            <span class="logo-sm font-size-25">
-                <img src="~static/img/shopping.jpeg" width="50" height="50" alt="logo">
+            <span class="logo-sm">
+                <img src="~static/img/shopping.jpeg" class="w-100" height="50" alt="logo">
             </span>
         </a>
     </div>
@@ -15,10 +15,9 @@
                     <li class="nav-item" :key="mKey">
                         <nuxt-link  :to="`/${menuInfo.menuLink}`" class="nav-link menu-link collapsed">
                             <i  aria-hidden="true"></i> <span class="new_menu_text">
-                                {{  menuInfo.menuName}}
+                                {{  $t('common')[menuInfo.menuName]}}
                                 </span>
                         </nuxt-link>
-
                     </li>
                 </template>
                 </ul>

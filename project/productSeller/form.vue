@@ -1,24 +1,26 @@
 <template>
-    <div class="container product-wrapper">
+    <div class="main_content_warp">
         <div class="title button-color">
             <h2>{{ this.$t('common').product_order }}</h2>
         </div>
         <div class="content">
-            <b-form @submit.stop.prevent>
-                <b-form-group label-class="mr-0 cls-required" class="col-md-10" id="input-group-1" label="Product Name" label-for="productName">
+            <b-form @submit.stop.prevent class="row">
+                <b-form-group label-class="mr-0 cls-required" class="col-4" id="input-group-1" label="Product Name" label-for="productName">
                     <b-form-input id="productName" v-model="product.name"  type="text" placeholder="Enter product name"
                         required></b-form-input>
                     <span id="span1" v-if="$v.product.name.$error && !$v.product.name.required" class="text-danger">{{ this.$t('errors').enter_product_name }}</span>
                 </b-form-group>
-                <b-form-group label-class="mr-0 cls-required" class="col-md-10" id="input-group-1" label="Quantity" label-for="productQuantity">
+                <b-form-group label-class="mr-0 cls-required" class="col-4" id="input-group-1" label="Quantity" label-for="productQuantity">
                     <b-form-input id="productQuantity" v-model="product.quantity" type="text" placeholder="Enter Quantity"
                         required></b-form-input>
                     <span v-if="$v.product.quantity.$error && !$v.product.quantity.required" class="text-danger">{{ this.$t('errors').select_quantity }}</span>
                     <span v-if="$v.product.quantity.$error && $v.product.quantity.required && !$v.product.quantity.numeric" class="text-danger">{{ this.$t('errors').number_allowed }}</span>
                 </b-form-group>
-                <div class="d-flex ml-3">
-                    <b-button id="submit" class="mr-3 button-color" @click="onSubmit">{{ this.$t('common').submit }}</b-button>
-                    <b-button id="clear" class="clear button-color" @click="clearFormData">{{ this.$t('common').clear }}</b-button>
+                <div class="col-4">
+                    <div class="d-flex justify-content-start mt-4 pt-2">
+                        <b-button id="submit" class="mr-3 button-color buy-button-color" @click="onSubmit">{{ this.$t('common').submit }}</b-button>
+                        <b-button id="clear" class="clear button-color" @click="clearFormData">{{ this.$t('common').clear }}</b-button>
+                    </div>
                 </div>
             </b-form>
         </div>

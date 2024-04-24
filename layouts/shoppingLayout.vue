@@ -1,7 +1,7 @@
 <template>
     <div class="shoppingLayout">
         <div class="page-wraper">
-            <div>
+            <div class="w-100">
                 <!-- <retail-header></retail-header> -->
                 <div v-bind:class="{ 'app-main showSidebar': (menuList.length > 0) }">
                     <retail-sidebar></retail-sidebar>

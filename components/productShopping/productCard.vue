@@ -1,10 +1,10 @@
 <template>
-<b-card no-body class="overflow-hidden" style="max-width: 540px;">
-    <b-row no-gutters>
-        <b-col md="6">
-            <b-card-img :src="`https://picsum.photos/400/400/?image=${number}`" alt="Image" class="rounded-0"></b-card-img>
-        </b-col>
-        <b-col md="6">
+<b-card no-body class="mb-4 card">
+    <div class="d-flex">
+        <div class="w-50">
+            <b-card-img :src="`https://picsum.photos/400/400/?image=${number}`" alt="Image" height="200px"></b-card-img>
+        </div>
+        <div class="w-50">
             <b-card-body :title="productDetails.ProductName">
                 <b-card-text>
                     <div class="d-flex justify-content-between mt-2">
@@ -30,12 +30,12 @@
                     </div>
                 </b-card-text>
                 <div>
-                    <b-button class="col-md-12 button-color" v-if="productDetails.Quantity > 0" @click="onSubmit('buy')">{{ this.$t('common').buy }}</b-button>
-                    <b-button class="col-md-12 button-color" v-if="productDetails.Quantity == 0" @click="onSubmit('restock')">{{ this.$t('common').order }}</b-button>
+                    <b-button class="col-md-12 buy-button-color" v-if="productDetails.Quantity > 0" @click="onSubmit('buy')">{{ this.$t('common').buy }}</b-button>
+                    <b-button class="col-md-12 buy-button-color" v-if="productDetails.Quantity == 0" @click="onSubmit('restock')">{{ this.$t('common').order }}</b-button>
                 </div>
             </b-card-body>
-        </b-col>
-    </b-row>
+        </div>
+    </div>
 </b-card>
 </template>
 
@@ -63,7 +63,7 @@ export default {
     },
     data() {
         return {
-            selectedQuantity: ''
+            selectedQuantity: 1
         }
     },
     validations: {

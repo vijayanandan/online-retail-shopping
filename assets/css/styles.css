@@ -1,11 +1,66 @@
-.container {
-    display: flex;
-    justify-content: space-evenly;
-    margin: 5px;
+.home_page_banner{
+    background-image: url("~static/img/back.jpg");
     width: 100%;
-    height: 100vh;
+    height: 500px;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+.main_content_warp{
+    margin:0px 15px 15px 170px;
 }
 
-.container .card {
+.sidebar-menu{
+    position: fixed;
+    z-index: 99;
+    background: #fff;
+    height: 100vh;
+    width: 153px;
+    box-shadow: 0px 0px 11px #646060;
 
+}
+
+.simplebar-content ul li a{
+    padding: 10px 5px;
+    display: inline-block;
+    width: 100%;
+}
+
+.simplebar-content ul li:hover a{
+    background-color: #3662d8;
+    color: #fff;
+}
+
+.card{
+    box-shadow: 0px 0px 7px #c6c6c6;
+}
+
+.card img{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius:0px;
+    border-top-right-radius:0px;
+}
+
+.buy-button-color{
+    background: #fff;
+    border: 1px solid #3662d8;
+    color: #3662d8;
+}
+
+.buy-button-color:hover{
+    background: #3662d8;
+    color: #fff;
+}
+
+.action-icon-btn .card .card-body .card-title{
+    margin-bottom: 0px;
+}
+
+.isLoading{
+    height: 81vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: #ddd;
+    border-radius: 5px;
 }

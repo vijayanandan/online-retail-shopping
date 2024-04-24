@@ -5,6 +5,7 @@
         "order":"Order",
         "in_stock":"In Stock",
         "product_order":"Product Order",
+        "product_shopping":"Product Shopping",
         "submit":"Submit",
         "clear":"Clear"
     },

@@ -6,7 +6,7 @@ export const state = () => ({
             menuLink:"productShopping"
         },
         {
-            menuName:"product_seller",
+            menuName:"product_order",
             menuLink:"ProductSeller"
         }
     ]
