@@ -15,15 +15,19 @@ export const state = () => ({
 });
 export const mutations = {
   setProductList(state, payload) {
-    state.productConfig.productList = payload;
-    state.paginationConfig.totalCount = payload.length;
+    state.productConfig.listData  =  JSON.parse(JSON.stringify(state.productConfig.productList)) ;
+
     let productFilter = payload.filter(
       (s) => s.IsActive == true && s.Quantity > 0
     );
+    state.paginationConfig.totalCount = productFilter.length;
+    state.productConfig.productList = productFilter;
+
     productFilter = productFilter.slice(
       state.paginationConfig.pageSize * state.paginationConfig.pageNumber - 12,
       state.paginationConfig.pageSize * state.paginationConfig.pageNumber
     );
+  
     state.productConfig.listData = productFilter;
   },
   setProductLoader(state, payload) {
@@ -32,6 +36,16 @@ export const mutations = {
   setPagination(state, payload) {
     state.paginationConfig.pageNumber = payload;
   },
+  applyFilter(state, payload) {
+    state.productConfig.listData  =  JSON.parse(JSON.stringify(state.productConfig.productList)) ;
+    state.paginationConfig.totalCount =  state.productConfig.productList.length;
+    if(payload != '') {
+      let filter = state.productConfig.listData.filter((f)=> f.ProductName != '' && f.ProductName.toLowerCase().includes(payload.toLowerCase()) );
+      state.paginationConfig.totalCount = filter.length;
+      state.productConfig.listData = filter;
+    }
+  },
+  
 };
 export const getters = {
   getProductList(state) {
@@ -80,6 +94,9 @@ export const actions = {
   },
   setPagination({ commit, state }, payload) {
     commit("setPagination", payload);
-    commit("setProductList", state.productConfig.productList);
   },
+  applyFilter({ commit }, payload) {
+    commit("applyFilter", payload);
+  },
+  
 };

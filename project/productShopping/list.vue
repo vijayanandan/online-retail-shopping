@@ -4,6 +4,7 @@
             <h2>{{ this.$t('common').product_shopping }}</h2>
         </div>
         <div v-if="!isLoading">
+        <input type="text" v-model="filterProductName" @input="onFilterApply()" >
             <div class="d-flex flex-wrap justify-content-between product-wrapper row">
                 <div v-for="(pData, Pinx) in productList" :key=Pinx class="col-6">
                     <product-card class="" :productDetails="pData" :number="paginationConfig.imgOrder + Pinx + pageNumber"
@@ -40,6 +41,7 @@ export default {
     data() {
         return {
             pageNumber: 1,
+            filterProductName:''
         }
     },
     computed: {
@@ -64,6 +66,9 @@ export default {
             this.pageNumber = pageNum
             this.$store.dispatch('shopping/setPagination', pageNum)
         },
+        onFilterApply() {
+            this.$store.dispatch('shopping/applyFilter', this.filterProductName)
+        }
     }
 }
 </script>
